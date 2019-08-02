@@ -28,7 +28,29 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                @*begin new stuff here*@
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                            @*<partial name="_LoginPartial" />*@
+                            <ul class="navbar-nav flex-grow-1">
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Todo" asp-action="Index">Todo</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </ul>
+                    @await Html.PartialAsync("_LoginPartial")
+                    @await Html.PartialAsync("_AdminActionsPartial")
+                </div>
+                @*end new stuff here*@
+                @*<div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
@@ -41,7 +63,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Todo" asp-action="Index">Todo</a>
                         </li>
                     </ul>
-                </div>
+                </div>*@
             </div>
         </nav>
     </header>
