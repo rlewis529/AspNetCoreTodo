@@ -1,29 +1,41 @@
 ﻿@model TodoItem
 
-<script src="~/lib/jquery/dist/jquery.js"></script>
-<script>
-    $(function () {
-        $("#datepicker").datepicker();
-    });
-</script>
-
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("p").click(function () {
+                $(this).hide();
+            });
+        });
+    </script>
+}
 
 <form asp-action="AddItem" method="POST">
     <label asp-for="Title">Add a new item:</label>
     <input asp-for="Title">
     <br />
-    
+
     <div class="form-group">
         <label asp-for="DueAt">Due date:</label>
-        <input asp-for="DueAt" id="datepicker">
+        <input asp-for="DueAt" type='text' id="datepicker">
     </div>
 
     <br />
     <button type="submit">Add</button>
 </form>
 
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_DatepickerPartial");
-    }
-}
+
+<script type="text/javascript">
+    $(function () {
+        $("#datepicker").datepicker({
+            dateFormat: 'mm/dd/yyyy',
+            autoClose: true,
+            todayHighlight: true,
+            orientation: "top"
+        });
+    });
+
+</script>
+
+
+
