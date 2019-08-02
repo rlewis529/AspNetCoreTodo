@@ -1,15 +1,5 @@
 ﻿@model TodoItem
 
-@section Scripts{
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("p").click(function () {
-                $(this).hide();
-            });
-        });
-    </script>
-}
-
 <form asp-action="AddItem" method="POST">
     <label asp-for="Title">Add a new item:</label>
     <input asp-for="Title">
@@ -38,4 +28,12 @@
 </script>
 
 
-
+@*@section Scripts{
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("p").click(function () {
+                    $(this).hide();
+                });
+            });
+        </script>
+    }*@
