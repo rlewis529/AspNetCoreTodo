@@ -33,7 +33,8 @@
     </table>
 
     <div class="panel-footer add-item-form">
-        @await Html.PartialAsync("AddItemPartial", new TodoItem() { Title = "[Insert here]" })
+        @*@await Html.PartialAsync("AddItemPartial", new TodoItem() { Title = "[Insert here]" })*@
+        @await Html.PartialAsync("AddItemPartial", new TodoItem() )
     </div>
 </div>
 

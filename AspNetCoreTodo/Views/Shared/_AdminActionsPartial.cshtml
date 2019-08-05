@@ -16,10 +16,11 @@
 
     if (isAdmin)
     {
-        <ul class="nav navbar-nav navbar-right">
-            <li>
+        <ul class="navbar-nav">
+        @*<ul class="nav navbar-nav navbar-right">*@
+            <li class="nav-item">
                 <a asp-controller="ManageUsers"
-                   asp-action="Index">
+                   asp-action="Index" class="nav-link text-dark">
                     Manage Users
                 </a>
             </li>
